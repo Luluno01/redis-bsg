@@ -10,6 +10,7 @@ Tested on Waterfall, version `git:Waterfall-Bootstrap:1.17-R0.1-SNAPSHOT:93773f9
   - [Commands](#commands)
     - [Main Command](#main-command)
       - [redis-bsg reload](#redis-bsg-reload)
+  - [Permission Nodes](#permission-nodes)
 
 ## Feature
 
@@ -34,3 +35,9 @@ Reload configuration (from file `plugins/Redis-BSG/config.yml`) and reconnect to
 ```
 redis-bsg reload
 ```
+
+## Permission Nodes
+
+| Permission      | Commands                     |
+| --------------- | ---------------------------- |
+| `redisbsg.main` | [redis-bsg *](#main-command) |
