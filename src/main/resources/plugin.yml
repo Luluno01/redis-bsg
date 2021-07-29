@@ -1,0 +1,10 @@
+name: Redis-BSG
+main: cyou.untitled.redisbsg.RedisBSG
+depends:
+  - BungeeSafeguard
+version: 1.0
+author: Untitled
+libraries:
+  - org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.5.1
+  - org.jetbrains.kotlinx:kotlinx-coroutines-reactive:1.5.1
+  - io.lettuce:lettuce-core:6.1.4.RELEASE
