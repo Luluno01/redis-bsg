@@ -19,11 +19,12 @@ class RedisBSG: Plugin() {
 
     @Suppress("DEPRECATION")
     override fun onEnable() {
+        
         Metrics(this, 12253)
         runBlocking(executorService.asCoroutineDispatcher()) {
             config.saveDefaultConfig()
             config.load(null)
-            val backend = RedisBackend(this@RedisBSG, "redis://localhost:6379")
+            val backend = RedisBackend(this@RedisBSG, config.url)
             backend.init(null)
             Backend.registerBackend(backend, this@RedisBSG)
         }
