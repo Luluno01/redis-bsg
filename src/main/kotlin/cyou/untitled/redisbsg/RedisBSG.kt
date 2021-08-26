@@ -19,7 +19,6 @@ class RedisBSG: Plugin() {
 
     @Suppress("DEPRECATION")
     override fun onEnable() {
-        
         Metrics(this, 12253)
         runBlocking(executorService.asCoroutineDispatcher()) {
             config.saveDefaultConfig()
