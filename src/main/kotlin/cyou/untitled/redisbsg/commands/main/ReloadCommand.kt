@@ -21,7 +21,11 @@ open class ReloadCommand(override val context: RedisBSG) : Subcommand(context, "
             config.reload(sender)
             val logger = RedirectedLogger.get(context, sender)
             logger.info("Reloading RedisBackend")
-            val backend = Backend.getBackend() as RedisBackend
+            val backend = Backend.getBackend()
+            if (backend !is RedisBackend) {
+                logger.severe("RedisBackend is not in use (current backend: $backend), cannot reload")
+                return@launch
+            }
             backend.url = config.url
             try {
                 backend.reload(sender)
